@@ -20,7 +20,7 @@ data "azurerm_resource_group" "main" {
 
 # Reference the AppService Module here.
 module "app_service" {
-  source               = "../../modules/appservice"
+  source               = "./modules/appservice"
   resource_group       = "${data.azurerm_resource_group.main.name}"
   location             = "${var.location}"
   resource_type        = "${var.resource_type}"
