@@ -6,5 +6,5 @@ variable "resource_group" {}
 
 # Tags
 variable "tags" {
-  type = "map"
+  type = map(string)
 }
