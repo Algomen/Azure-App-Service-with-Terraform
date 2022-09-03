@@ -24,7 +24,7 @@ module "app_service" {
   resource_group       = "${data.azurerm_resource_group.main.name}"
   location             = "${var.location}"
   resource_type        = "${var.resource_type}"
-  application_type     = ""{var.application_type}
+  application_type     = "{var.application_type}"
   tags                 = "${local.tags}"
 }
   
