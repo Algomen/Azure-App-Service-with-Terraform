@@ -14,17 +14,14 @@ terraform {
   }
 }
 
-data "azurerm_resource_group" "main" {
-  name = "Azuredevops"
-}
 
 # Reference the AppService Module here.
 module "app_service" {
   source               = "./modules/appservice"
-  resource_group       = "${data.azurerm_resource_group.main.name}"
+  resource_group       = "${var.resource_group}"
   location             = "${var.location}"
   resource_type        = "${var.resource_type}"
-  application_type     = "{var.application_type}"
+  application_type     = "${var.application_type}"
   tags                 = "${local.tags}"
 }
   
