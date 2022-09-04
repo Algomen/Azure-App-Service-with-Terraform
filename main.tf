@@ -5,6 +5,7 @@ provider "azurerm" {
   client_secret   = "${var.client_secret}"
   features {}
 }
+
 terraform {
   backend "azurerm" {
     storage_account_name = "tfstate2989"
@@ -14,6 +15,12 @@ terraform {
   }
 }
 
+locals {
+  tags = {
+    tier        = "${var.tier}"
+    deployment  = "${var.deployment}"
+  }
+}
 
 # Reference the AppService Module here.
 module "app_service" {
